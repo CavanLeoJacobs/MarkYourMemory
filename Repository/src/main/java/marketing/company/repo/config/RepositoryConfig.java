@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
         "marketing.company.repo.exceptions",
         "marketing.company.repo.persistence"})
 @Configuration
-
 @EnableTransactionManagement
 @EnableJpaRepositories("marketing.company.repo.persistence")
 @EntityScan("marketing.company.domain.persistence")

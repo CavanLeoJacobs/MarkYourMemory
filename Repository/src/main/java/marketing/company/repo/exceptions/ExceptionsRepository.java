@@ -17,8 +17,8 @@ public class ExceptionsRepository
     {
         try
         {
-          DataBaseCheck.dataSource();
-            DataBaseCheck.entityManagerFactory();
+         // DataBaseCheck.dataSource();
+           // DataBaseCheck.entityManagerFactory();
         }
         catch (Exception error) {
             System.out.println("DataBase Error");

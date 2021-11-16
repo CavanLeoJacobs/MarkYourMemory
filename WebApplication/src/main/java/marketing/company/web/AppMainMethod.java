@@ -3,8 +3,9 @@ package marketing.company.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 @SpringBootApplication
-public class AppMainMethod
+class AppMainMethod
 {
     public static void main(String[] args)
     {

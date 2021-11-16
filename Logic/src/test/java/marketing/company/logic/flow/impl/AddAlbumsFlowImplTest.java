@@ -1,21 +1,16 @@
 package marketing.company.logic.flow.impl;
 
-import marketing.company.domain.dto.AlbumsDto;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class AddAlbumsFlowImplTest {
-    AddAlbumsFlowImpl TestLogic=new AddAlbumsFlowImpl();
-    AlbumsDto Albums = new  AlbumsDto();
-    Long ID = Albums.getAlbumsID();
-    String fileFormat = Albums.getFileFormat();
-    String geolocation = Albums.getGeolocation();
-    String tags = Albums.getTags();
-    LocalDate capturedDate = Albums.getCapturedDate();
-    LocalDate capturedBy = Albums.getCapturedBy();
+   // AddAlbumsFlowImpl TestLogic=new AddAlbumsFlowImpl();
+   // AlbumsDto Albums = new  AlbumsDto();
+   // Long ID = Albums.getAlbumsID();
+   // String fileFormat = Albums.getFileFormat();
+   // String geolocation = Albums.getGeolocation();
+   // String tags = Albums.getTags();
+   // LocalDate capturedDate = Albums.getCapturedDate();
+    //LocalDate capturedBy = Albums.getCapturedBy();
 
     @Test
     void getAllAlbums()
@@ -26,7 +21,7 @@ class AddAlbumsFlowImplTest {
     @Test
     void addAlbums()
     {
-       // Albums.setFileFormat(Albums.getFileFormat());
+       /* Albums.setFileFormat(Albums.getFileFormat());
 
         System.out.println(ID);
         System.out.println(fileFormat);
@@ -35,5 +30,7 @@ class AddAlbumsFlowImplTest {
         System.out.println(capturedDate);
         System.out.println(capturedBy);
         System.out.println(TestLogic);
+
+        */
     }
 }

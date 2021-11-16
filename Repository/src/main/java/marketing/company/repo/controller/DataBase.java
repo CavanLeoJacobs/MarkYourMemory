@@ -67,11 +67,13 @@ public class DataBase
             dataSource.setPassword(password);
             dataSource.setUrl(datasourceUrl);
 
-            //dataSource.setImplicitCachingEnabled(true);
-            //dataSource.setFastConnectionFailoverEnabled(true);
+            //dataSource.getImplicitCachingEnabled(true);
+          //  dataSource.setFastConnectionFailoverEnabled(true);
             return dataSource;
-        } catch (Exception error) {
+        } catch (Exception error)
+        {
             throw new RuntimeException("Unable to connect to DB", error);
+
         }
     }
 
@@ -83,7 +85,7 @@ public class DataBase
         properties.setProperty("hibernate.transaction.factory_class", "org.hibernate.transaction.JTATransactionFactory");
         properties.setProperty("hibernate.query.factory_class", "org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory");
         properties.setProperty("hibernate.transaction.jta.platform", "org.hibernate.service.jta.platform.Internal.sunOneJtaPlatform");
-        //properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
         //mine is different
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
         properties.setProperty("hibernate.generate_statistics", "false");

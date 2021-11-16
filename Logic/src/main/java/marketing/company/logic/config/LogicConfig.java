@@ -8,7 +8,6 @@ import marketing.company.translator.config.TranslatorConfig;
 
 @Configuration
 @Import(TranslatorConfig.class)
-
 @ComponentScan(basePackages =
         {
                 "marketing.company.logic",

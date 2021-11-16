@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serial;
 import java.io.Serializable;
@@ -30,13 +31,12 @@ public class Photos implements Serializable
     {
 
     }
-
-    @ApiModelProperty(position=1 ,value = "Photos.photoID")
+    @Id
+    @ApiModelProperty(position=1 ,value = "Photos.PhotoID")
     @Column(name = "PhotoID")
     public Long getPhotoID() {
         return PhotoID;
     }
-
     @Column(name = "FileFormat")
     public String getFileFormat() {
         return FileFormat;

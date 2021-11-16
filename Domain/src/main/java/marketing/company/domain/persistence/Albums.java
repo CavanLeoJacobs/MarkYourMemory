@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serial;
 import java.io.Serializable;
@@ -27,6 +28,7 @@ public class Albums implements Serializable
 
     public Albums() {
     }
+    @Id
     @ApiModelProperty(position=1 ,value = "Albums.AlbumsID")
     @Column(name = "AlbumsID")
     public Long getAlbumsID() {

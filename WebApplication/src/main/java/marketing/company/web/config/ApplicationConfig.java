@@ -9,13 +9,11 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @Import(LogicConfig.class)
-
 @ComponentScan(basePackages =
         {
                "marketing.company.web",
                 "marketing.company.web.controller",
                 "marketing.company.web.exceptions"
-
         }
 )
 @PropertySource(value = "classpath:application.properties")
@@ -23,6 +21,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource(value = "classpath:logback.xml")
 //@PropertySource(value = "webapp.WEB-INF.web.xml");
 public class ApplicationConfig {
-        public ApplicationConfig() {
+        public ApplicationConfig()
+        {
         }
 }
