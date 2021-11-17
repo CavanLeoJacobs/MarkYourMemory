@@ -1,6 +1,5 @@
 package marketing.company.domain.dto;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -8,7 +7,7 @@ import java.util.Objects;
 public class PhotosDto implements Serializable
 {
 
-    @Serial
+
     private static final long serialVersionUID = 1599332068037562367L;
     private Long PhotoID;
     private String FileFormat;

@@ -22,6 +22,7 @@
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>marketing.company</groupId>
             <artifactId>Domain</artifactId>

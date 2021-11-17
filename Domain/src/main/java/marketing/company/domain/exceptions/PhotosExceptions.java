@@ -1,11 +1,14 @@
 package marketing.company.domain.exceptions;
 
-import java.io.Serial;
+import marketing.company.domain.dto.PhotosDto;
+import marketing.company.domain.persistence.Photos;
+
 import java.io.Serializable;
+import java.util.Objects;
 
 public class PhotosExceptions implements Serializable
 {
-    @Serial
+
     private static final long serialVersionUID = -4734025335945959621L;
 
     public PhotosExceptions()
@@ -15,16 +18,21 @@ public class PhotosExceptions implements Serializable
 
     public void PhotosExceptionsErrorCheck()
     {
-        try
-        {
-            System.out.println("Photos Check");
+        PhotosDto photosDto=new PhotosDto();
+        Photos photos=new Photos();
 
-        }
-        catch (Exception error)
-        {
-            System.out.println("Photos Error");
-            System.out.println(error.getMessage());
-        }
+           if (!Objects.equals(photos.getFileFormat(), "pgn"))
+           {
+               System.out.println("must be in pgn format (Photo)");
+           }
+            if (!Objects.equals(photosDto.getFileFormat(), "pgn"))
+            {
+                System.out.println("must be in pgn format (PhotoDto)");
+            }
+
+
+
+
 
     }
 }

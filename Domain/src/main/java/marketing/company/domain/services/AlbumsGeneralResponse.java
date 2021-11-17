@@ -1,21 +1,20 @@
 package marketing.company.domain.services;
 
-import java.io.Serial;
 import java.io.Serializable;
 
-public class AlbumsGeneralResponse<A> implements Serializable
+public class AlbumsGeneralResponse <A> implements Serializable
 {
-    @Serial
+
     private static final long serialVersionUID = 1314535159669886339L;
-
-}
-
-/* boolean AddBool=false;
-    Boolean AddButtonClick=false;
     public AlbumsGeneralResponse()
     {
 
     }
+}
+
+/* boolean AddBool=false;
+    Boolean AddButtonClick=false;
+
    public String AddedTrue()
    {
 

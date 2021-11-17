@@ -1,12 +1,8 @@
 package marketing.company.web.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-
-@RestController
-@RequestMapping("marketing-company")
+///@RestController
+//@RequestMapping("marketing-company")
 public class AlbumsController {
 
     public AlbumsController()

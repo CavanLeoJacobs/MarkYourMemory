@@ -7,46 +7,61 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.Random;
 
-class AlbumsDtoTest {
+public class AlbumsDtoTest {
 
     AlbumsDto albumsDto =new AlbumsDto();
+    @BeforeEach
+    void setUp()
+    {
+
+    }
+    @AfterEach
+    void tearDown()
+    {
+
+    }
 
     @Test
     void getAlbumsID()
     {
 
         albumsDto.getAlbumsID();
-
+        System.out.println(albumsDto.getAlbumsID());
     }
 
     @Test
-    void getFileFormat()
+    public void getFileFormat()
     {
         albumsDto.getFileFormat();
+        System.out.println(albumsDto.getFileFormat());
     }
 
     @Test
     void getGeolocation()
     {
         albumsDto.getGeolocation();
+        System.out.println(albumsDto.getGeolocation());
     }
 
     @Test
     void getTags()
     {
         albumsDto.getTags();
+        System.out.println(albumsDto.getTags());
     }
 
     @Test
     void getCapturedDate()
     {
         albumsDto.getCapturedDate();
+        System.out.println(albumsDto.getCapturedDate());
     }
 
     @Test
     void getCapturedBy()
     {
         albumsDto.getCapturedBy();
+        System.out.println(albumsDto.getCapturedBy());
     }
 
     @Test

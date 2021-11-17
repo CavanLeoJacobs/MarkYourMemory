@@ -1,13 +1,12 @@
 package marketing.company.domain.dto;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class AlbumsDto implements Serializable
 {
-    @Serial
+
     private static final long serialVersionUID = -5520752670541908581L;
     private Long AlbumsID;
     private String FileFormat;
@@ -15,12 +14,10 @@ public class AlbumsDto implements Serializable
     private String Tags;
     private LocalDate CapturedDate;
     private LocalDate CapturedBy;
-
     public AlbumsDto()
     {
 
     }
-
     public AlbumsDto(Long albumsID, String fileFormat, String geolocation, String tags, LocalDate capturedDate, LocalDate capturedBy) {
 
         AlbumsID = albumsID;

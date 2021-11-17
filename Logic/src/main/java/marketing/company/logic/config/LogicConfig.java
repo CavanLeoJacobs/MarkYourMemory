@@ -15,6 +15,7 @@ import marketing.company.translator.config.TranslatorConfig;
         })
 public class LogicConfig
 {
-        public LogicConfig() {
+        public LogicConfig()
+        {
         }
 }

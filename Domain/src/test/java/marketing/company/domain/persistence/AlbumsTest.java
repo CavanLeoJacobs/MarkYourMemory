@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.Random;
 
-class AlbumsTest {
+public class AlbumsTest {
     Albums albums=new Albums();
 
 
@@ -16,7 +16,7 @@ class AlbumsTest {
     }
 
     @Test
-    void getFileFormat()
+    public void getFileFormat()
     {
         albums.getFileFormat();
     }
@@ -59,7 +59,7 @@ class AlbumsTest {
     @Test
     void setFileFormat()
     {
-        albums.setFileFormat("");
+        albums.setFileFormat("pgn");
     }
 
     @Test
@@ -71,7 +71,7 @@ class AlbumsTest {
     @Test
     void setTags()
     {
-        albums.setTags("");
+        albums.setTags("Tags");
     }
 
     @Test

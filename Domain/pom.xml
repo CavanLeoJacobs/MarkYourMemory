@@ -12,12 +12,7 @@
     <artifactId>Domain</artifactId>
     <packaging>jar</packaging>
     <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.1</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.webjars.bowergithub.angular-ui</groupId>
             <artifactId>angular-ui-router-bower</artifactId>
@@ -51,12 +46,6 @@
             <artifactId>AngularJS</artifactId>
             <version>${AngularJS.version}</version>
             <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
         </dependency>
 
         <dependency>

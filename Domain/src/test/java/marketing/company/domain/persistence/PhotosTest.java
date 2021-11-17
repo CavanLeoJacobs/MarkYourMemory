@@ -12,7 +12,6 @@ Photos photos=new Photos();
     {
 
     }
-
     @Test
     void getFileFormat()
     {
