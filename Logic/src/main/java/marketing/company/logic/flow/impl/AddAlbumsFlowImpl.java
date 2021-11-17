@@ -7,8 +7,12 @@ import java.time.LocalDate;
 
 public class AddAlbumsFlowImpl implements AddAlbumsFlow
 {
+    public AddAlbumsFlowImpl()
+    {
 
-
+    }
+}
+/*
     AlbumsDto Albums = new  AlbumsDto();
     Long ID = Albums.getAlbumsID();
     String fileFormat = Albums.getFileFormat();
@@ -17,25 +21,22 @@ public class AddAlbumsFlowImpl implements AddAlbumsFlow
     LocalDate capturedDate = Albums.getCapturedDate();
     LocalDate capturedBy = Albums.getCapturedBy();
 
-    public AddAlbumsFlowImpl()
-    {
 
-    }
-    public AlbumsDto getAllAlbums()
-    {
+  //  public AlbumsDto getAllAlbums()
+    //{
 
-        AddAlbums(Albums);
+     //   AddAlbums(Albums);
 
-        return Albums;
-    }
+       // return Albums;
+    //}
 
 
 
-    public AlbumsDto AddAlbums(AlbumsDto Albums)
-    {
+    //public AlbumsDto AddAlbums(AlbumsDto Albums)
+    //{
 
-        Albums.setAlbumsID(Albums.getAlbumsID());
+      //  Albums.setAlbumsID(Albums.getAlbumsID());
 
-         return Albums;
-    }
+        // return Albums;
+   // }
 }

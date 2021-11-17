@@ -1,4 +1,8 @@
 package marketing.company.translator;
 
-public interface AlbumsTranslator {
+import marketing.company.domain.dto.AlbumsDto;
+
+public interface AlbumsTranslator
+{
+    AlbumsDto getA
 }

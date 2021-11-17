@@ -1,14 +1,37 @@
 package marketing.company.domain.services;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-public class AlbumsGeneralResponse <A> implements Serializable
+public class AlbumsGeneralResponse<T> implements Serializable
 {
 
     private static final long serialVersionUID = 1314535159669886339L;
+    private final boolean successful;
+    private final T added;
     public AlbumsGeneralResponse()
     {
 
+    }
+
+
+    public AlbumsGeneralResponse(boolean successful,T added)
+    {
+        this.successful = successful;
+        this.added= added;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AlbumsGeneralResponse<?> that = (AlbumsGeneralResponse<?>) o;
+        return successful == that.successful && Objects.equals(added, that.added);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(successful, added);
     }
 }
 
