@@ -1,22 +1,16 @@
 package marketing.company.repo.controller;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Properties;
-
+@Configuration
 @EnableTransactionManagement
-@EntityScan("marketing.company.domain.persistence")
 @EnableJpaRepositories("marketing.company.repo.persistence")
+@PropertySource(value ="classpath:Database.properties")
 public class DataBase
 {
     private static final String[] ENTITY_PACKAGES_TO_SCAN = {"marketing.company.domain.persistence"};
@@ -27,29 +21,9 @@ public class DataBase
     {
 
     }
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource());
-            entityManagerFactoryBean.setPackagesToScan(ENTITY_PACKAGES_TO_SCAN);
-              entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-         entityManagerFactoryBean.setJpaProperties(JpaProperties());
 
-      entityManagerFactoryBean.setPersistenceUnitName(PERSISTENCE_UNIT_NAME);
-        entityManagerFactoryBean.setJpaProperties(JpaProperties());
-        return entityManagerFactoryBean;
-    }
-    @Bean
-    public PlatformTransactionManager transactionManager() {
+   /*
 
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
-        return transactionManager;
-    }
-    @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-        return new PersistenceExceptionTranslationPostProcessor();
-    }
 
     @Value("${spring.datasource.url}")
     private String datasourceUrl="jdbc:mysql://localhost/MarketingCompany";
@@ -75,7 +49,12 @@ public class DataBase
             throw new RuntimeException("Unable to connect to DB", error);
 
         }
+
     }
+      */
+
+
+
 
     @Bean
     public Properties JpaProperties() {

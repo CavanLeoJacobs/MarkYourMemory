@@ -41,35 +41,8 @@
             <artifactId>javax.persistence-api</artifactId>
             <version>${javax.persistence-api.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>AngularJS</artifactId>
-            <version>${AngularJS.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>22.0.0</version>
-        </dependency>
-
     </dependencies>
-    <build>
-        <plugins>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
-            </plugin>
-        </plugins>
-    </build>
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>

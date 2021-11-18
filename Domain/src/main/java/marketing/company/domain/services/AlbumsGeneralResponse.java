@@ -7,19 +7,65 @@ public class AlbumsGeneralResponse<T> implements Serializable
 {
 
     private static final long serialVersionUID = 1314535159669886339L;
-    private final boolean successful;
-    private final T added;
-    public AlbumsGeneralResponse()
-    {
+    private final boolean successfully;
+    private final transient T service;
 
+    public AlbumsGeneralResponse(boolean successfully,T service)
+    {
+        this.successfully = successfully;
+        this.service= service;
+    }
+    public boolean isSuccessful()
+    {
+        return successfully;
+    }
+    public T getService()
+    {
+        return service;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AlbumsGeneralResponse)) return false;
+        AlbumsGeneralResponse<?> that = (AlbumsGeneralResponse<?>) o;
+        return successfully == that.successfully && Objects.equals(getService(), that.getService());
+    }
 
-    public AlbumsGeneralResponse(boolean successful,T added)
+    @Override
+    public int hashCode() {
+        return Objects.hash(successfully, service);
+    }
+
+    @Override
+    public String toString() {
+        return "AlbumsGeneralResponse{" +
+                "successfully=" + successfully +
+                ", service=" + service +
+                '}';
+    }
+}
+  /*
+
+
+    @Override
+    public boolean equals(Object O) {
+        if (this == O) return true;
+        if (O==null || getClass() != O.getClass()) return false;
+        GeneralResponse<?> that = (GeneralResponse<?>) O;
+        return successful == that.successful && Objects.equals(payload,that.payload);
+    }
+
+   private final T ;
+
+
+
+    public AlbumsGeneralResponse(boolean successful,T )
     {
         this.successful = successful;
-        this.added= added;
+        this.= ;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -34,6 +80,14 @@ public class AlbumsGeneralResponse<T> implements Serializable
         return Objects.hash(successful, added);
     }
 }
+
+
+     */
+
+
+
+
+
 
 /* boolean AddBool=false;
     Boolean AddButtonClick=false;

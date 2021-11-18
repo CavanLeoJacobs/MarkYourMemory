@@ -1,32 +1,17 @@
 package marketing.company.web.controller;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
-
-import marketing.company.domain.dto.PhotosDto;
-
-import marketing.company.domain.services.PhotosGeneralResponse;
-import marketing.company.logic.flow.AddAlbumsFlow;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 @SpringBootApplication
 @RestController
 @RequestMapping("PhotosController")
-public class PhotosController
-{
-    public PhotosController()
-    {
+public class PhotosController {
+    public PhotosController() {
 
     }
 
+/*
 
 
         @GetMapping("/all")
@@ -54,5 +39,6 @@ public class PhotosController
 
         private final AddPhotosFlow addPhotosFlow;
     }
+    */
 }
 
