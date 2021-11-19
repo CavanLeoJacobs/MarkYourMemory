@@ -11,25 +11,31 @@
     <artifactId>Logic</artifactId>
     <packaging>jar</packaging>
     <dependencies>
-
         <dependency>
             <groupId>marketing.company</groupId>
             <artifactId>Translator</artifactId>
             <version>${project.version}</version>
-            <scope>compile</scope>
+        </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>5.8.1</version>
+                <scope>test</scope>
+
         </dependency>
         <dependency>
             <groupId>marketing.company</groupId>
             <artifactId>Domain</artifactId>
             <version>${project.version}</version>
-            <scope>compile</scope>
         </dependency>
-
     </dependencies>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <!--<maven.compiler.source>16</maven.compiler.source>
+         <maven.compiler.target>16</maven.compiler.target>
+         -->
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
 </project>

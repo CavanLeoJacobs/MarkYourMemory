@@ -3,23 +3,24 @@ package marketing.company.domain.services;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class AlbumsGeneralResponse<T> implements Serializable
+public class AlbumsGeneralResponse<A> implements Serializable
 {
 
     private static final long serialVersionUID = 1314535159669886339L;
-    private final boolean successfully;
-    private final transient T service;
 
-    public AlbumsGeneralResponse(boolean successfully,T service)
-    {
+
+    public AlbumsGeneralResponse(boolean successfully, A service) {
         this.successfully = successfully;
-        this.service= service;
+        this.service = service;
     }
+    private final boolean successfully;
+    private final transient A service;
+
     public boolean isSuccessful()
     {
         return successfully;
     }
-    public T getService()
+    public A getService()
     {
         return service;
     }

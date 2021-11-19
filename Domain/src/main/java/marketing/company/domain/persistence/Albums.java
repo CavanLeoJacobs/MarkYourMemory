@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -17,7 +16,7 @@ import java.util.Objects;
 @ApiModel(value="Albums",description="A DTO that represents the Albums")
 public class Albums implements Serializable
 {
-    @Serial
+
     private static final long serialVersionUID = -4984226601624324688L;
     private Long AlbumsID;
     private String FileFormat;

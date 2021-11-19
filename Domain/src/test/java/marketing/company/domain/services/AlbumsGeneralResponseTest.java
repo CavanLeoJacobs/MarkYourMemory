@@ -17,6 +17,6 @@ class AlbumsGeneralResponseTest {
     @Test
     void albumsGeneralResponseOnlyTem()
     {
-       // System.out.println();
+
     }
 }

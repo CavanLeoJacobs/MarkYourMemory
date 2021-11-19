@@ -2,76 +2,80 @@ package marketing.company.repo.config;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
 import java.util.Properties;
 
-//@ComponentScan(basePackages = {
-  //      "marketing.company.repo",
-    ///    "marketing.company.repo.controller",
-       // "marketing.company.repo.exceptions",
-        //"marketing.company.repo.persistence"})
+@ComponentScan(basePackages = {
+        "marketing.company.repo",
+       "marketing.company.repo.controller",
+        "marketing.company.repo.exceptions",
+        "marketing.company.repo.persistence"})
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("marketing.company.repo.persistence")
 @EntityScan("marketing.company.domain.persistence")
 @PropertySource(value = "classpath:DataBase.properties")
 public class RepositoryConfig {
-    private static final String[] ENTITY_PACKAGES_TO_SCAN = {"marketing.company.domain.persistence"};
-    private static final String PERSISTENCE_UNIT_NAME = "marketing.company.persistence";
+     private static final String[] ENTITY_PACKAGES_TO_SCAN = {"marketing.company.domain.persistence"};
+     private static final String PERSISTENCE_UNIT_NAME = "marketing.company.persistence";
 
     public RepositoryConfig() {
 
 
     }
-
-    /*
     @Bean
     public DataSource dataSource() {
-          EmbeddedDataBaseBuilder builder = new EmbeddedDataBaseBuilder();
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         return builder.setType(EmbeddedDatabaseType.HSQL)
-              .addScript("script/schema.sql")
+                .addScript("script/schema.sql")
                 .addScript("script/data.sql")
-              .build;
+                .build();
+    }
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+        entityManagerFactoryBean.setDataSource(dataSource());
+        entityManagerFactoryBean.setPackagesToScan(ENTITY_PACKAGES_TO_SCAN);
+        entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+        entityManagerFactoryBean.setJpaProperties(buildJpaProperties());
+        entityManagerFactoryBean.setPersistenceUnitName(PERSISTENCE_UNIT_NAME);
+
+        return entityManagerFactoryBean;
+    }
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory);
+        return transactionManager;
+    }
+    @Bean
+    public JdbcTemplate getJdbcTemplate()
+    {
+        return new JdbcTemplate(dataSource());
     }
 
-
- */
-
-        @Bean
-        public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-            final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-         //entityManagerFactoryBean.setDataSource(dataSource());
-            entityManagerFactoryBean.setPackagesToScan(ENTITY_PACKAGES_TO_SCAN);
-            entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-              entityManagerFactoryBean.setJpaProperties(JpaProperties());
-
-            entityManagerFactoryBean.setPersistenceUnitName(PERSISTENCE_UNIT_NAME);
-            entityManagerFactoryBean.setJpaProperties(JpaProperties());
-            return entityManagerFactoryBean;
-        }
-
-        @Bean
-        public PlatformTransactionManager transactionManager() {
-
-            JpaTransactionManager transactionManager = new JpaTransactionManager();
-            transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
-            return transactionManager;
-        }
-        @Bean
-        public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-            return new PersistenceExceptionTranslationPostProcessor();
-        }
     @Bean
-    public Properties JpaProperties() {
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+        return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+    private Properties buildJpaProperties() {
         Properties properties = new Properties();
         properties.setProperty("javax.persistence.transactionType", "jta");
         properties.setProperty("hibernate.IntegerCode.use_reflection_optimizer", "true");
@@ -93,4 +97,5 @@ public class RepositoryConfig {
         properties.setProperty("hibernate.hibernate.", "update");
         return properties;
     }
-    }
+}
+

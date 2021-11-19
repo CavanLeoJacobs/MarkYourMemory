@@ -20,7 +20,7 @@ import java.util.List;
 @SpringBootApplication
 @RestController
 //@RequestMapping("AlbumsController")
-@RequestMapping("marketing-company")
+@RequestMapping("/marketing-company")
 public class AlbumsController {
 
 
@@ -37,13 +37,13 @@ public class AlbumsController {
     })
 
 
-public ResponseEntity<AlbumsGeneralResponse<List<AlbumsDto>>>getAll() {
+public ResponseEntity<AlbumsGeneralResponse<List<AlbumsDto>>>responseResponseEntity() {
     List<AlbumsDto> albums = readAlbumsFlow.ReadAlbums();
     AlbumsGeneralResponse<List<AlbumsDto>> response = new AlbumsGeneralResponse<List<AlbumsDto>>(true, albums);
     return new ResponseEntity<>(response, HttpStatus.OK);
 }
 
-public AlbumsGeneralResponse<String>GetAll()
+public AlbumsGeneralResponse<String>ReadAlbums()
 {
     return new AlbumsGeneralResponse<String>(true, "No Types Found");
 }
