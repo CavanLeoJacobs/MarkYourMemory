@@ -1,18 +1,11 @@
 package marketing.company.repo.controller;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import java.util.Properties;
-@Configuration
+public class DataBase
+{ }
+    /*@Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("marketing.company.repo.persistence")
 @PropertySource(value ="classpath:Database.properties")
-public class DataBase
-{
     private static final String[] ENTITY_PACKAGES_TO_SCAN = {"marketing.company.domain.persistence"};
     private static final String PERSISTENCE_UNIT_NAME = "marketing.company.persistence";
 
@@ -22,7 +15,7 @@ public class DataBase
 
     }
 
-   /*
+
 
 
     @Value("${spring.datasource.url}")
@@ -54,7 +47,7 @@ public class DataBase
       */
 
 
-
+/*
 
     @Bean
     public Properties JpaProperties() {
@@ -81,7 +74,7 @@ public class DataBase
     }
 
 }
-/*
+
 
 
 

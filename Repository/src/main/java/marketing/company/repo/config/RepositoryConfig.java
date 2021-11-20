@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @ComponentScan(basePackages = {
-        "marketing.company.repo",
+      //  "marketing.company.repo",
        "marketing.company.repo.controller",
         "marketing.company.repo.exceptions",
         "marketing.company.repo.persistence"})
@@ -84,7 +84,7 @@ public class RepositoryConfig {
         properties.setProperty("hibernate.transaction.jta.platform", "org.hibernate.service.jta.platform.Internal.sunOneJtaPlatform");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
         //mine is different
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
+       // properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
         properties.setProperty("hibernate.generate_statistics", "false");
         properties.setProperty("hibernate.use_sql_comments", "false");
         properties.setProperty("hibernate.show_sql", "true");
@@ -93,7 +93,8 @@ public class RepositoryConfig {
         properties.setProperty("hibernate.order_inserts", "true");
         properties.setProperty("hibernate.order_updates", "true");
         properties.setProperty("hibernate.batch_versioned_data", "true");
-        properties.setProperty("hibernate.connection.driver.class", "com.mysql.cj.jdbc.Driver");
+       // properties.setProperty("hibernate.connection.driver.class", "com.mysql.cj.jdbc.Driver");
+       // properties.setProperty("hibernate.connection.driver.class", "com.mysql.cj.jdbc.Driver");
         properties.setProperty("hibernate.hibernate.", "update");
         return properties;
     }

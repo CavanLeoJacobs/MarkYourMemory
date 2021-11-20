@@ -7,6 +7,7 @@ import java.util.List;
 public interface ReadAlbumsFlow
 {
     List<AlbumsDto> ReadAlbums();
+    AlbumsDto Read(AlbumsDto albumsDto);
 
 
 }

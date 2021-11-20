@@ -5,6 +5,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
   selector: 'app-my-new-component',
   templateUrl: './my-new-component.component.html',
   styleUrls: ['./my-new-component.component.css']
+
 })
 export class MyNewComponentComponent implements OnInit{
   @Input()
@@ -15,8 +16,12 @@ export class MyNewComponentComponent implements OnInit{
   readonly release: EventEmitter<void> = new EventEmitter();
   constructor()
   {
+
   }
 
- ngOnInit(): void {
+ ngOnInit(): void
+ {
+ j
  }
 }
+

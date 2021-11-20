@@ -18,8 +18,8 @@ public class ReadAlbumsFlowImpl implements ReadAlbumsFlow
         return null;
     }
 
-    // @Override
-    //public AlbumsDto Read(AlbumsDto albumsDto) {
-     //   return null;
-   // }
+    @Override
+    public AlbumsDto Read(AlbumsDto albumsDto) {
+        return null;
+    }
 }
