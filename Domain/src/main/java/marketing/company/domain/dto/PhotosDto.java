@@ -9,7 +9,7 @@ public class PhotosDto implements Serializable
 
 
     private static final long serialVersionUID = 1599332068037562367L;
-    private Long PhotoID;
+    private Long PhotosID;
     private String FileFormat;
     private String Geolocation;
     private String Tags;
@@ -19,8 +19,8 @@ public class PhotosDto implements Serializable
     public PhotosDto() {
     }
 
-    public PhotosDto(Long photoID, String fileFormat, String geolocation, String tags, LocalDate capturedDate, LocalDate capturedBy) {
-        PhotoID = photoID;
+    public PhotosDto(Long photosID, String fileFormat, String geolocation, String tags, LocalDate capturedDate, LocalDate capturedBy) {
+        PhotosID = photosID;
         FileFormat = fileFormat;
         Geolocation = geolocation;
         Tags = tags;
@@ -30,7 +30,7 @@ public class PhotosDto implements Serializable
 
     public PhotosDto(PhotosDto photos)
     {
-        this.setPhotoID(photos.getPhotoID());
+        this.setPhotosID(photos.getPhotosID());
         this.setFileFormat(photos.getFileFormat());
         this.setGeolocation(photos.getGeolocation());
         this.setTags(photos.getTags());
@@ -38,8 +38,8 @@ public class PhotosDto implements Serializable
         this.setCapturedBy(photos.getCapturedBy());
 
     }
-    public Long getPhotoID() {
-        return PhotoID;
+    public Long getPhotosID() {
+        return PhotosID;
     }
 
     public String getFileFormat() {
@@ -62,8 +62,8 @@ public class PhotosDto implements Serializable
         return CapturedBy;
     }
 
-    public void setPhotoID(Long photoID) {
-        PhotoID = photoID;
+    public void setPhotosID(Long photosID) {
+        PhotosID = photosID;
     }
 
     public void setFileFormat(String fileFormat) {
@@ -91,11 +91,11 @@ public class PhotosDto implements Serializable
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PhotosDto photosDto = (PhotosDto) o;
-        return Objects.equals(PhotoID, photosDto.PhotoID) && Objects.equals(FileFormat, photosDto.FileFormat) && Objects.equals(Geolocation, photosDto.Geolocation) && Objects.equals(Tags, photosDto.Tags) && Objects.equals(CapturedDate, photosDto.CapturedDate) && Objects.equals(CapturedBy, photosDto.CapturedBy);
+        return Objects.equals(PhotosID, photosDto.PhotosID) && Objects.equals(FileFormat, photosDto.FileFormat) && Objects.equals(Geolocation, photosDto.Geolocation) && Objects.equals(Tags, photosDto.Tags) && Objects.equals(CapturedDate, photosDto.CapturedDate) && Objects.equals(CapturedBy, photosDto.CapturedBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(PhotoID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy);
+        return Objects.hash(PhotosID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy);
     }
 }

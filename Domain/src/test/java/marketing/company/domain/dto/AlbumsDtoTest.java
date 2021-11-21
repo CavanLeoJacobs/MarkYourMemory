@@ -1,109 +1,72 @@
 package marketing.company.domain.dto;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
+
+import org.junit.After;
+import org.junit.Test;
 
 import java.time.LocalDate;
 import java.util.Random;
 
 public class AlbumsDtoTest {
+    AlbumsDto albumsDto=new AlbumsDto();
 
-    AlbumsDto albumsDto =new AlbumsDto();
-    @BeforeEach
-    void setUp()
+    @After
+    public String getrun(String format)
     {
+        albumsDto.setFileFormat(format);
 
+        return format;
     }
-    @AfterEach
-    void tearDown()
-    {
-
-    }
-
     @Test
-    void getAlbumsID()
+    public void AlbumsID()
     {
 
+        Random RandomGenarator=new Random();
+        long ID=0;
+        ID=RandomGenarator.nextLong();
+        albumsDto.setAlbumsID(ID);
         albumsDto.getAlbumsID();
         System.out.println(albumsDto.getAlbumsID());
     }
-
     @Test
-    public void getFileFormat()
+    public void FileFormat()
     {
+        albumsDto.setFileFormat("PGN");
         albumsDto.getFileFormat();
         System.out.println(albumsDto.getFileFormat());
     }
 
     @Test
-    void getGeolocation()
+    public void Geolocation()
     {
+        albumsDto.setGeolocation("name Geolocation");
         albumsDto.getGeolocation();
         System.out.println(albumsDto.getGeolocation());
     }
 
     @Test
-    void getTags()
+    public void Tags()
     {
+        albumsDto.setTags(" name of Tags");
         albumsDto.getTags();
         System.out.println(albumsDto.getTags());
     }
 
     @Test
-    void getCapturedDate()
+    public void CapturedDate()
     {
+        albumsDto.setCapturedDate(LocalDate.now());
         albumsDto.getCapturedDate();
         System.out.println(albumsDto.getCapturedDate());
     }
 
     @Test
-    void getCapturedBy()
+    public void CapturedBy()
     {
+        albumsDto.setCapturedBy(LocalDate.now());
         albumsDto.getCapturedBy();
         System.out.println(albumsDto.getCapturedBy());
     }
 
-    @Test
-    void setAlbumsID()
-    {
-        Random RandomGenarator=new Random();
-        long ID=0;
-        ID=RandomGenarator.nextLong();
-        albumsDto.setAlbumsID(ID);
-    }
-
-    @Test
-    void setFileFormat()
-    {
-        albumsDto.setFileFormat("pgn");
-
-    }
-
-    @Test
-    void setGeolocation()
-    {
-        albumsDto.setGeolocation("name Geolocation");
-
-    }
-
-    @Test
-    void setTags()
-    {
-        albumsDto.setTags(" name of Tags");
-    }
-
-    @Test
-    void setCapturedDate()
-    {
-
-        albumsDto.setCapturedDate(LocalDate.now());
-    }
-
-    @Test
-    void setCapturedBy()
-    {
-        albumsDto.setCapturedBy(LocalDate.now());
-
-    }
 }

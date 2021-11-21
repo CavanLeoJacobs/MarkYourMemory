@@ -1,16 +1,27 @@
 package marketing.company.domain.persistence;
 
+import org.junit.After;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.Random;
 
+
 public class AlbumsTest {
     Albums albums=new Albums();
 
+    @After
+    public String getrun(String format)
+    {
+
+        albums.setFileFormat(format);
+
+        return format;
+    }
+
 
     @Test
-    void getAlbumsID()
+   public void getAlbumsID()
     {
         albums.getAlbumsID();
     }
@@ -22,31 +33,31 @@ public class AlbumsTest {
     }
 
     @Test
-    void getGeolocation()
+ public    void getGeolocation()
     {
         albums.getGeolocation();
     }
 
     @Test
-    void getTags()
+  public   void getTags()
     {
         albums.getTags();
     }
 
     @Test
-    void getCapturedDate()
+  public   void getCapturedDate()
     {
         albums.getCapturedDate();
     }
 
     @Test
-    void getCapturedBy()
+  public   void getCapturedBy()
     {
         albums.getCapturedBy();
     }
 
     @Test
-    void setAlbumsID()
+ public    void setAlbumsID()
     {
         long ID=0;
         Random RandomGenarator=new Random();
@@ -57,25 +68,26 @@ public class AlbumsTest {
     }
 
     @Test
-    void setFileFormat()
+   public void setFileFormat()
     {
         albums.setFileFormat("pgn");
+
     }
 
     @Test
-    void setGeolocation()
+   public void setGeolocation()
     {
         albums.setGeolocation("Geolocation");
     }
 
     @Test
-    void setTags()
+ public void setTags()
     {
         albums.setTags("Tags");
     }
 
     @Test
-    void setCapturedDate()
+  public   void setCapturedDate()
     {
         albums.setCapturedDate(LocalDate.now());
 

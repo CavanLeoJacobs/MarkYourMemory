@@ -30,10 +30,6 @@ public class AlbumsExceptions implements Serializable
                     System.out.println("must be in pgn format (AlbumsDto)");
                 }
 
-
-
-
-
         }
         catch (Exception error) {
             System.out.println("Albums Error");

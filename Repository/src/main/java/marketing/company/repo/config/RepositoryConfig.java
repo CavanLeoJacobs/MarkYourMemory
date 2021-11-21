@@ -21,15 +21,16 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @ComponentScan(basePackages = {
-      //  "marketing.company.repo",
+       "marketing.company.repo",
        "marketing.company.repo.controller",
         "marketing.company.repo.exceptions",
         "marketing.company.repo.persistence"})
-@Configuration
+
 @EnableTransactionManagement
 @EnableJpaRepositories("marketing.company.repo.persistence")
 @EntityScan("marketing.company.domain.persistence")
 @PropertySource(value = "classpath:DataBase.properties")
+@Configuration
 public class RepositoryConfig {
      private static final String[] ENTITY_PACKAGES_TO_SCAN = {"marketing.company.domain.persistence"};
      private static final String PERSISTENCE_UNIT_NAME = "marketing.company.persistence";
@@ -93,10 +94,21 @@ public class RepositoryConfig {
         properties.setProperty("hibernate.order_inserts", "true");
         properties.setProperty("hibernate.order_updates", "true");
         properties.setProperty("hibernate.batch_versioned_data", "true");
-       // properties.setProperty("hibernate.connection.driver.class", "com.mysql.cj.jdbc.Driver");
+        properties.setProperty("hibernate.connection.driver.class", "com.mysql.cj.jdbc.Driver");
        // properties.setProperty("hibernate.connection.driver.class", "com.mysql.cj.jdbc.Driver");
         properties.setProperty("hibernate.hibernate.", "update");
         return properties;
     }
+
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
+        return transactionManager;
+    }
+
+
+
 }
 

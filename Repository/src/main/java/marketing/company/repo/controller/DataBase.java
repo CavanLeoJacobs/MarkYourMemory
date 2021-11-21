@@ -1,7 +1,9 @@
 package marketing.company.repo.controller;
 
 public class DataBase
-{ }
+{
+
+}
     /*@Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("marketing.company.repo.persistence")

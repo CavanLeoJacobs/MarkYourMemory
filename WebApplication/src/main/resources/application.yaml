@@ -11,4 +11,3 @@ swagger:
   application:
     version: @project.version@
     name: MarketingCompany
-    description: @project.description@

@@ -9,18 +9,18 @@ public class AlbumsGeneralResponse<A> implements Serializable
     private static final long serialVersionUID = 1314535159669886339L;
 
 
-    public AlbumsGeneralResponse(boolean successfully, A service) {
+    public AlbumsGeneralResponse(boolean successfully, String service) {
         this.successfully = successfully;
         this.service = service;
     }
     private final boolean successfully;
-    private final transient A service;
+    private final transient String  service;
 
     public boolean isSuccessful()
     {
         return successfully;
     }
-    public A getService()
+    public String  getService()
     {
         return service;
     }

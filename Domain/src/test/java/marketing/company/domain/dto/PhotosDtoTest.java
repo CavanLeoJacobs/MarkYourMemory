@@ -1,66 +1,69 @@
 package marketing.company.domain.dto;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Test;
 
-class PhotosDtoTest {
+import java.time.LocalDate;
+import java.util.Random;
+public class PhotosDtoTest {
 
-    @BeforeEach
-    void setUp()
+    PhotosDto photosDto=new PhotosDto();
+
+
+    @After
+    public String getrun(String format)
     {
+        photosDto.setFileFormat(format);
 
+        return format;
     }
-
-    @AfterEach
-    void tearDown() {
+    @Test
+    public void PhotosID()
+    {
+        Random RandomGenarator=new Random();
+        long ID=0;
+        ID=RandomGenarator.nextLong();
+        photosDto.setPhotosID(ID);
+        photosDto.getPhotosID();
+        System.out.println(photosDto.getPhotosID());
+    }
+    @Test
+    public void FileFormat()
+    {
+        photosDto.setFileFormat("pgn");
+        photosDto.getFileFormat();
+        System.out.println(photosDto.getFileFormat());
     }
 
     @Test
-    void getPhotoID() {
+    public void Geolocation()
+    {
+        photosDto.setGeolocation("name Geolocation");
+        photosDto.getGeolocation();
+        System.out.println(photosDto.getGeolocation());
     }
 
     @Test
-    void getFileFormat() {
+    public void Tags()
+    {
+        photosDto.setTags(" name of Tags");
+        photosDto.getTags();
+        System.out.println(photosDto.getTags());
     }
 
     @Test
-    void getGeolocation() {
+    public void CapturedDate()
+    {
+        photosDto.setCapturedDate(LocalDate.now());
+        photosDto.getCapturedDate();
+        System.out.println(photosDto.getCapturedDate());
     }
 
     @Test
-    void getTags() {
-    }
-
-    @Test
-    void getCapturedDate() {
-    }
-
-    @Test
-    void getCapturedBy() {
-    }
-
-    @Test
-    void setPhotoID() {
-    }
-
-    @Test
-    void setFileFormat() {
-    }
-
-    @Test
-    void setGeolocation() {
-    }
-
-    @Test
-    void setTags() {
-    }
-
-    @Test
-    void setCapturedDate() {
-    }
-
-    @Test
-    void setCapturedBy() {
+    public void CapturedBy()
+    {
+        photosDto.setCapturedBy(LocalDate.now());
+        photosDto.getCapturedBy();
+        System.out.println(photosDto.getCapturedBy());
     }
 }

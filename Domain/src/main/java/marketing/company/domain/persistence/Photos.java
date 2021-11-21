@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table
+@Table(name= "Photos",schema = "Mark_your_Memories")
 @ApiModel(value="Photos",description="A DTO that represents the Photos")
 public class Photos implements Serializable
 {
@@ -30,6 +30,16 @@ public class Photos implements Serializable
     {
 
     }
+
+    public Photos(Long photoID, String fileFormat, String geolocation, String tags, LocalDate capturedDate, LocalDate capturedBy) {
+        PhotoID = photoID;
+        FileFormat = fileFormat;
+        Geolocation = geolocation;
+        Tags = tags;
+        CapturedDate = capturedDate;
+        CapturedBy = capturedBy;
+    }
+
     @Id
     @ApiModelProperty(position=1 ,value = "Photos.PhotoID")
     @Column(name = "PhotoID")

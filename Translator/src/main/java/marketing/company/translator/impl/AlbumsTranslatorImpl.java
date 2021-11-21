@@ -2,9 +2,10 @@ package marketing.company.translator.impl;
 
 import marketing.company.domain.dto.AlbumsDto;
 import marketing.company.translator.AlbumsTranslator;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class AlbumsTranslatorImpl implements AlbumsTranslator
 {
  @Override

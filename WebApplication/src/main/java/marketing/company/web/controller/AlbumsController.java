@@ -1,9 +1,6 @@
 package marketing.company.web.controller;
 
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import marketing.company.domain.dto.AlbumsDto;
 import marketing.company.domain.services.AlbumsGeneralResponse;
 import marketing.company.logic.flow.ReadAlbumsFlow;
@@ -11,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +21,7 @@ public class AlbumsController {
 
 
 
-   // private final ReadAlbumsFlow getReadAlbumsFlow;
+/*
 
     @GetMapping("/all")
     @ApiOperation(value = "Gets all the configured albums.", notes = "Returns a list of albums")
@@ -35,12 +31,13 @@ public class AlbumsController {
             @ApiResponse(code = 404, message = "Not found", response = AlbumsGeneralResponse.class),
             @ApiResponse(code = 500, message = "Internal Server Error", response = AlbumsGeneralResponse.class),
     })
-
+*/
 
 public ResponseEntity<AlbumsGeneralResponse<List<AlbumsDto>>>responseResponseEntity() {
-    List<AlbumsDto> albums = readAlbumsFlow.ReadAlbums();
-    AlbumsGeneralResponse<List<AlbumsDto>> response = new AlbumsGeneralResponse<List<AlbumsDto>>(true, albums);
-    return new ResponseEntity<>(response, HttpStatus.OK);
+        List<AlbumsDto> albums;
+
+        AlbumsGeneralResponse<List<AlbumsDto>> response = new AlbumsGeneralResponse<List<AlbumsDto>>(true,"ss");
+        return new ResponseEntity<>(response, HttpStatus.OK);
 }
 
 public AlbumsGeneralResponse<String>ReadAlbums()
@@ -52,7 +49,9 @@ public AlbumsGeneralResponse<String>ReadAlbums()
         this.readAlbumsFlow = readAlbumsFlow;
     }
    private final ReadAlbumsFlow readAlbumsFlow;
+
 }
+
 
 
     /*

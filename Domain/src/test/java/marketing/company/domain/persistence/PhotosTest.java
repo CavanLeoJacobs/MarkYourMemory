@@ -1,13 +1,23 @@
 package marketing.company.domain.persistence;
 
+import org.junit.After;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.Random;
 
-class PhotosTest {
+public class PhotosTest {
 Photos photos=new Photos();
-    @Test
+    @After
+    public String getrun(String format)
+    {
+        photos.setFileFormat(format);
+
+        return format;
+    }
+
+
+@Test
     void getPhotoID()
     {
 
