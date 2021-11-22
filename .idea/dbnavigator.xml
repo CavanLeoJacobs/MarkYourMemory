@@ -66,9 +66,7 @@ create table emp(id int(10),name varchar(40),age int(3));]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="b120c024-a880-49d9-8405-3de88dae310c" object-ref="consoles/MarkYourMemories" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="32ad91f9-ce67-4230-ad90-5a34aaf9150f" />
