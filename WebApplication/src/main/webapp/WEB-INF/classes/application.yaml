@@ -9,6 +9,5 @@ spring:
       path: /mvc
 swagger:
   application:
-    version: @project.version@
+    version: 1.0-SNAPSHOT
     name: MarketingCompany
-    description: @project.description@

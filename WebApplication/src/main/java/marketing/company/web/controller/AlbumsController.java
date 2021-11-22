@@ -15,8 +15,8 @@ import java.util.List;
 
 @SpringBootApplication
 @RestController
-//@RequestMapping("AlbumsController")
-@RequestMapping("/marketing-company")
+
+@RequestMapping("/marketing-albums")
 public class AlbumsController {
 
 
@@ -33,22 +33,23 @@ public class AlbumsController {
     })
 */
 
-public ResponseEntity<AlbumsGeneralResponse<List<AlbumsDto>>>responseResponseEntity() {
+    public ResponseEntity<AlbumsGeneralResponse<List<AlbumsDto>>>responseResponseEntity() {
         List<AlbumsDto> albums;
 
-        AlbumsGeneralResponse<List<AlbumsDto>> response = new AlbumsGeneralResponse<List<AlbumsDto>>(true,"ss");
+        AlbumsGeneralResponse<List<AlbumsDto>> response = new AlbumsGeneralResponse<List<AlbumsDto>>(true,"successfully");
         return new ResponseEntity<>(response, HttpStatus.OK);
-}
+    }
 
-public AlbumsGeneralResponse<String>ReadAlbums()
-{
-    return new AlbumsGeneralResponse<String>(true, "No Types Found");
-}
+
+    public AlbumsGeneralResponse<String>ReadAlbums()
+    {
+        return new AlbumsGeneralResponse<String>(true, "No Types Found");
+    }
     @Autowired
     public AlbumsController(ReadAlbumsFlow readAlbumsFlow) {
         this.readAlbumsFlow = readAlbumsFlow;
     }
-   private final ReadAlbumsFlow readAlbumsFlow;
+    private final ReadAlbumsFlow readAlbumsFlow;
 
 }
 

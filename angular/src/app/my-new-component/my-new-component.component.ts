@@ -18,10 +18,14 @@ export class MyNewComponentComponent implements OnInit{
   {
 
   }
-
  ngOnInit(): void
  {
- j
+
  }
+myFunction()
+{
+var path = "/about.html";
+ window.location.href = path;
+}
 }
 

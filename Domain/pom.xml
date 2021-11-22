@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-     <version>5.6.1.Final</version>
+            <version>5.6.1.Final</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
-       <version>1.6.3</version>
+            <version>1.6.3</version>
         </dependency>
         <dependency>
             <groupId>javax.persistence</groupId>
@@ -57,18 +57,21 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.1</version>
+            <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
-        </dependencies>
-        <!--
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
+    </dependencies>
 
 
--->
+
     <properties>
-        <!--<maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        -->
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <javax.persistence-api.version>2.2</javax.persistence-api.version>

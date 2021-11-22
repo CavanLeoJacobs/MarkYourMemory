@@ -2,7 +2,9 @@ package marketing.company.repo.controller;
 
 public class DataBase
 {
-
+    public DataBase()
+    {
+    }
 }
     /*@Configuration
 @EnableTransactionManagement

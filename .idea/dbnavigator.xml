@@ -23,7 +23,7 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="false" />
+    <show-object-properties value="true" />
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
@@ -36,14 +36,45 @@
     <connection id="5481e1c8-5870-45d9-8342-991ba19fd549">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
+    <connection id="52d1ade7-d87e-48a2-9033-3aa93aa01e19">
+      <console name="Connection 1" type="STANDARD" schema="" session="Main"><![CDATA[Create Shcema Mark_your_Memories;
+DROP TABLE Albums;
+DROP TABLE Photos;
+CREATE TABLE Albums 
+(
+AlbumsID Int not null,
+FileFormat varchar(7),
+Geolocation varchar(7),
+Tags varchar(20),
+CapturedDate date,
+CapturedBy date
+);
+CREATE TABLE Photos
+(
+Long Int not null;
+FileFormat varchar(7),
+Geolocation varchar(7),
+Tags varchar(20),
+CapturedDate date,
+CapturedBy date
+);
+INSERT INTO Albums (AlbumsID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy) VALUES (1, "PGN", "RSA","NAME","2000-01-01", "2000-01-01");
+INSERT INTO Photos (PhotoID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy) VALUES (1, "PGN", "RSA","NAME","2000-01-01", "2000-01-01");
+create database sonoo;  
+use sonoo;  
+create table emp(id int(10),name varchar(40),age int(3));]]></console>
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="b120c024-a880-49d9-8405-3de88dae310c" object-ref="consoles/MarkYourMemories" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="32ad91f9-ce67-4230-ad90-5a34aaf9150f" />
     <connection id="b120c024-a880-49d9-8405-3de88dae310c" />
     <connection id="5481e1c8-5870-45d9-8342-991ba19fd549" />
+    <connection id="52d1ade7-d87e-48a2-9033-3aa93aa01e19" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="b120c024-a880-49d9-8405-3de88dae310c" dataset="marketingcompany.albums" active-filter-id="" />
@@ -53,6 +84,9 @@
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/graphdb-parameters/my.sql" connection-id="52d1ade7-d87e-48a2-9033-3aa93aa01e19" session-id="MAIN" current-schema="" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -116,7 +150,7 @@
           <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="false" />
-          <connect-automatically value="true" />
+          <connect-automatically value="false" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="true" />
           <environment-type value="default" />
@@ -244,7 +278,7 @@
       </connection>
       <connection id="5481e1c8-5870-45d9-8342-991ba19fd549" active="false">
         <database>
-          <name value="Connection" />
+          <name value="Mark_your_memories" />
           <description value="" />
           <database-type value="GENERIC" />
           <config-type value="CUSTOM" />
@@ -282,6 +316,87 @@
           <ddl-file-binding value="true" />
           <database-logging value="false" />
           <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="true" />
+          <environment-type value="default" />
+          <connectivity-timeout value="5" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="52d1ade7-d87e-48a2-9033-3aa93aa01e19" active="false">
+        <database>
+          <name value="mark_your_memories" />
+          <description value="" />
+          <database-type value="MYSQL" />
+          <config-type value="CUSTOM" />
+          <database-version value="9999.0" />
+          <driver-source value="EXTERNAL" />
+          <driver-library value="C:\Users\Dell\Downloads\HSqlJdbcDriver\hsqldb-2.6.1-jdk8.jar" />
+          <driver value="" />
+          <url value="jdbc:mysql://localhost:3306/mysql" />
+          <type value="USER_PASSWORD" />
+          <user value="root" />
+          <deprecated-pwd value="MjkzODI0NjdNeXNxbFBhc3N3b3JkQDEg" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="false" />
+          <connect-automatically value="false" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="true" />
           <environment-type value="default" />

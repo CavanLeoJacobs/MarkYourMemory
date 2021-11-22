@@ -6,7 +6,8 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.util.Random;
 
-public class AlbumsTest {
+public class AlbumsTest
+{
   AlbumsDto albumsDto =new AlbumsDto();
   private final Random ID=new Random();
   private String fileformat="null";

@@ -4,6 +4,7 @@ package marketing.company.web.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -17,10 +18,12 @@ import java.util.Collections;
 
 @Configuration
 @EnableSwagger2
-//@Import(springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration.class)
+@Component
+//@Import(springfox.Bean.validators.configuration.BeanValidatorPluginsConfiguration.class)
 public class WebConfig
 {
-    public WebConfig() {
+    public WebConfig()
+    {
     }
 
     public class SwaggerConfiguration {
@@ -35,7 +38,6 @@ public class WebConfig
         public Docket api() {
             return new Docket(DocumentationType.SWAGGER_2)
                     .select()
-
                     .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class)).paths(PathSelectors.any())
                     .build()
                     .pathMapping("/")

@@ -32,7 +32,7 @@ import java.util.Properties;
 @EnableJpaRepositories("marketing.company.repo.persistence")
 @EntityScan("marketing.company.domain.persistence")
 @PropertySource(value = "classpath:DataBase-test.properties")
-class RepositoryConfigTest
+public class RepositoryConfigTest
 {
 
 
@@ -82,7 +82,7 @@ class RepositoryConfigTest
             return new PersistenceExceptionTranslationPostProcessor();
         }
 
-        private Properties buildJpaProperties() {
+       public Properties buildJpaProperties() {
             Properties properties = new Properties();
             properties.setProperty("javax.persistence.transactionType", "jta");
             properties.setProperty("hibernate.IntegerCode.use_reflection_optimizer", "true");

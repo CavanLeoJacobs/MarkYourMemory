@@ -17,16 +17,17 @@ import org.springframework.context.annotation.PropertySource;
                 "marketing.company.web.exceptions"
         }
 )
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "application.properties")
 //@PropertySource(value = "classpath:application.yml")
-@PropertySource(value = "classpath:/application.yaml")
-//@PropertySource(value = "webapp/WEB-INF/classes/application.yml")
-//@PropertySource(value = "classpath:logback.xml")
+@PropertySource(value = "application.yaml")
+@PropertySource(value = "logback.xml")
 //@PropertySource(value = "webapp.WEB-INF.web.xml");
 
 public class ApplicationConfig {
         public ApplicationConfig()
         {
+              //  ApplicationExceptions AnyException=new  ApplicationExceptions();
+               // AnyException.ApplicationExceptionsCheck();
 
         }
 }

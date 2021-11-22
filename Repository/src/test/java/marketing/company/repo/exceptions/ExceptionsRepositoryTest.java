@@ -1,5 +1,6 @@
 package marketing.company.repo.exceptions;
 
+import marketing.company.repo.config.RepositoryConfigTest;
 import org.junit.Test;
 
 public class ExceptionsRepositoryTest {
@@ -11,7 +12,8 @@ public class ExceptionsRepositoryTest {
         {
             try
             {
-            System.out.println("hi");
+                RepositoryConfigTest repositoryConfigTest=new RepositoryConfigTest();
+                repositoryConfigTest.entityManagerFactory();
             }
             catch (Exception error)
             {

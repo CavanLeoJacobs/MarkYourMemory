@@ -1,5 +1,6 @@
 package marketing.company.repo.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -29,28 +30,49 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableJpaRepositories("marketing.company.repo.persistence")
 @EntityScan("marketing.company.domain.persistence")
+@PropertySource(value = "classpath:DataBase.yml")
 @PropertySource(value = "classpath:DataBase.properties")
+
 @Configuration
 public class RepositoryConfig {
      private static final String[] ENTITY_PACKAGES_TO_SCAN = {"marketing.company.domain.persistence"};
      private static final String PERSISTENCE_UNIT_NAME = "marketing.company.persistence";
 
-    public RepositoryConfig() {
+    @Value("${spring.datasource.url}")
+    private String datasourceUrl="jdbc:mysql://localhost/MarketingCompany";
+    @Value("${spring.datasource.username}")
+    private String username="root";
+    @Value("${spring.datasource.password}")
+    private String password="password";
+    //@Value("${spring.datasource.driver-class-name}")
+   // private String driver="com.mysql.cj.jdbc.Driver";
 
+    @Bean
+    public DataSource dataSource(){
+        try {
+            EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+            //Class.forName("org.hsqldb.jdbcDriver",true,);
+            //  Class.forName("com.mysql.jdbc.Driver",true,);
+            //Connection c = DriverManager.getConnection("jdbc:hsqldb:file:/opt/db/testdb", "SA", "29382467MysqlPassword@1");
 
+          //  Connection con=DriverManager.getConnection(
+            //        "jdbc:mysql://localhost:3306/sonoo","root","root");
+             return builder.setType(EmbeddedDatabaseType.HSQL)
+                    .addScript("script/schema.sql")
+                    .addScript("script/data.sql")
+                    .build();
+        }
+        catch (Exception sqlException)
+        {
+            throw new RuntimeException("Unable to connect to DB", sqlException);
+        }
     }
     @Bean
-    public DataSource dataSource() {
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setType(EmbeddedDatabaseType.HSQL)
-                .addScript("script/schema.sql")
-                .addScript("script/data.sql")
-                .build();
-    }
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory()
+    {
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource());
+
+      //  entityManagerFactoryBean.setDataSource(dataSource());
         entityManagerFactoryBean.setPackagesToScan(ENTITY_PACKAGES_TO_SCAN);
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         entityManagerFactoryBean.setJpaProperties(buildJpaProperties());
@@ -68,7 +90,8 @@ public class RepositoryConfig {
     @Bean
     public JdbcTemplate getJdbcTemplate()
     {
-        return new JdbcTemplate(dataSource());
+        //return new JdbcTemplate(dataSource());
+        return null;
     }
 
     @Bean
@@ -76,7 +99,7 @@ public class RepositoryConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    private Properties buildJpaProperties() {
+   public Properties buildJpaProperties() {
         Properties properties = new Properties();
         properties.setProperty("javax.persistence.transactionType", "jta");
         properties.setProperty("hibernate.IntegerCode.use_reflection_optimizer", "true");

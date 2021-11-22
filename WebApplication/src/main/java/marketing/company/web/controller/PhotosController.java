@@ -1,15 +1,40 @@
 package marketing.company.web.controller;
 
+import marketing.company.domain.dto.PhotosDto;
+import marketing.company.domain.services.PhotosGeneralResponse;
+import marketing.company.logic.flow.ReadPhotosFlow;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
 @SpringBootApplication
 @RestController
-@RequestMapping("PhotosController")
+@RequestMapping("/marketing-photos")
 public class PhotosController {
-    public PhotosController() {
 
+    public ResponseEntity<PhotosGeneralResponse<List<PhotosDto>>> responseResponseEntity() {
+        List<PhotosDto> photos;
+
+        PhotosGeneralResponse<List<PhotosDto>> response = new PhotosGeneralResponse<List<PhotosDto>>(true,"successfully");
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
+    public PhotosGeneralResponse<String>ReadPhotos()
+    {
+        return new PhotosGeneralResponse<String>(true, "No Types Found");
+    }
+    @Autowired
+    public PhotosController(ReadPhotosFlow readPhotosFlow) {
+        this.readPhotosFlow = readPhotosFlow;
+    }
+    private final ReadPhotosFlow readPhotosFlow;
+
+}
+
 
 /*
 
@@ -40,5 +65,5 @@ public class PhotosController {
         private final AddPhotosFlow addPhotosFlow;
     }
     */
-}
+
 

@@ -9,18 +9,40 @@ public class PhotosGeneralResponse<A> implements Serializable
 
     private static final long serialVersionUID = -5125154957713696269L;
 
+    public PhotosGeneralResponse(boolean successfully, String service) {
+        this.successfully = successfully;
+        this.service = service;
+    }
+    private final boolean successfully;
+    private final transient String  service;
 
-    private final boolean successful;
-    private final transient A payload;
-    public PhotosGeneralResponse(boolean successful,A payload)
+    public boolean isSuccessful()
     {
-        this.successful = successful;
-        this.payload= payload;
+        return successfully;
+    }
+    public String  getService()
+    {
+        return service;
     }
 
     @Override
-    public int hashCode()
-    {
-        return Objects.hash();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PhotosGeneralResponse)) return false;
+        PhotosGeneralResponse<?> that = (PhotosGeneralResponse<?>) o;
+        return successfully == that.successfully && Objects.equals(getService(), that.getService());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(successfully, service);
+    }
+
+    @Override
+    public String toString() {
+        return "PhotosGeneralResponse{" +
+                "successfully=" + successfully +
+                ", service=" + service +
+                '}';
     }
 }
