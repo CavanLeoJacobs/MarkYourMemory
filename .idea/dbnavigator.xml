@@ -31,7 +31,31 @@
       <console name="MarketingCompany" type="STANDARD" schema="mysql" session="Main" />
     </connection>
     <connection id="b120c024-a880-49d9-8405-3de88dae310c">
-      <console name="MarkYourMemories" type="STANDARD" schema="market" session="Main" />
+      <console name="MarkYourMemories" type="STANDARD" schema="marketingcompany" session="Main"><![CDATA[Create Schema Mark_your_Memories;
+Drop TABLE Albums;
+Drop TABLE Photos;
+
+CREATE TABLE Albums
+(
+AlbumsID bigint not null,
+FileFormat varchar(7),
+Geolocation varchar(7),
+Tags varchar(20),
+CapturedDate date,
+CapturedBy date
+);
+
+CREATE TABLE Photos
+(
+PhotosID bigint not null,
+FileFormat varchar(7),
+Geolocation varchar(7),
+Tags varchar(20),
+CapturedDate date,
+CapturedBy date
+);
+INSERT INTO Photos (PhotoID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy) VALUES (1, "PGN", "RSA", "TAGS", now, now);
+INSERT INTO Albums (AlbumsID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy) VALUES (2, "PGN","RSA", "NAME",now, now);]]></console>
     </connection>
     <connection id="5481e1c8-5870-45d9-8342-991ba19fd549">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
@@ -84,7 +108,8 @@ create table emp(id int(10),name varchar(40),age int(3));]]></console>
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/graphdb-parameters/my.sql" connection-id="52d1ade7-d87e-48a2-9033-3aa93aa01e19" session-id="MAIN" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/Repository/src/main/resources/script/data.sql" connection-id="b120c024-a880-49d9-8405-3de88dae310c" session-id="MAIN" current-schema="marketingcompany" />
+    <mapping file-url="file://$PROJECT_DIR$/Repository/src/main/resources/script/schema.sql" connection-id="b120c024-a880-49d9-8405-3de88dae310c" session-id="MAIN" current-schema="marketingcompany" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -232,7 +257,7 @@ create table emp(id int(10),name varchar(40),age int(3));]]></console>
           <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="false" />
-          <connect-automatically value="false" />
+          <connect-automatically value="true" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="true" />
           <environment-type value="default" />

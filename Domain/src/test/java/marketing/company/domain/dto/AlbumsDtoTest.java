@@ -2,7 +2,6 @@ package marketing.company.domain.dto;
 
 //import org.junit.jupiter.api.Test;
 
-import org.junit.After;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -11,7 +10,7 @@ import java.util.Random;
 public class AlbumsDtoTest {
     AlbumsDto albumsDto=new AlbumsDto();
 
-    @After
+
     public String getrun(String format)
     {
         albumsDto.setFileFormat(format);
@@ -32,7 +31,7 @@ public class AlbumsDtoTest {
     @Test
     public void FileFormat()
     {
-        albumsDto.setFileFormat("PGN");
+        albumsDto.setFileFormat("pgn");
         albumsDto.getFileFormat();
         System.out.println(albumsDto.getFileFormat());
     }

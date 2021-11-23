@@ -1,7 +1,6 @@
 package marketing.company.repo.exceptions;
 
 import marketing.company.repo.config.RepositoryConfig;
-import org.junit.Test;
 
 public class ExceptionsRepository
 {
@@ -15,7 +14,7 @@ public class ExceptionsRepository
     {
         ExceptionsDataBase();
     }
-@Test
+
     public void ExceptionsDataBase()
     {
         try

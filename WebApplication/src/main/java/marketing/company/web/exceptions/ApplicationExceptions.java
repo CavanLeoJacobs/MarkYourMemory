@@ -4,6 +4,7 @@ import marketing.company.domain.exceptions.DomainExceptions;
 import marketing.company.logic.exceptions.LogicExceptions;
 import marketing.company.repo.exceptions.ExceptionsRepository;
 import marketing.company.translator.Exceptions.TranslatorExceptions;
+import org.junit.Test;
 
 public class ApplicationExceptions
 {
@@ -17,7 +18,7 @@ public class ApplicationExceptions
     {
         ApplicationExceptionsCheck();
     }
-
+@Test
     public void ApplicationExceptionsCheck()
     {
         try

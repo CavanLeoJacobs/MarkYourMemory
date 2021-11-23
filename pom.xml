@@ -210,7 +210,11 @@
                 <version>5.1.8.RELEASE</version>
             </dependency>
 -->
-
+            <dependency>
+                <groupId>io.github.classgraph</groupId>
+                <artifactId>classgraph</artifactId>
+                <version>4.8.108</version>
+            </dependency>
             <dependency>
                 <groupId>com.querydsl</groupId>
                 <artifactId>codegen-utils</artifactId>
@@ -350,6 +354,7 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-inline</artifactId>
@@ -373,29 +378,22 @@
             <version>1.4.200</version>
             <scope>runtime</scope>
         </dependency>
-
-
     </dependencies>
     <build>
         <plugins>
-
-        </plugins>
-        <pluginManagement>
-
-        <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
+        </plugins>
+        <pluginManagement>
+        <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.2.0</version>
                 </plugin>
-
-
             </plugins>
         </pluginManagement>
     </build>

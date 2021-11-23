@@ -38,7 +38,7 @@ public class DomainExceptionsTest {
                 System.out.println("must be in one of the follow formats (pgn ||bmp||ico||jpeg||jpg||gif||tiff )"+"\n");
 
             }
-            String formatAlbumsDto = albumsDtoTest.getrun("jpg");
+           String formatAlbumsDto =albumsDtoTest.getrun("jpg");
             System.out.print("\n");
             System.out.println("the format was  "+formatAlbumsDto+ "  for the AlbumsDto");
             if (formatAlbumsDto != "pgn" && formatAlbumsDto != "bmp" && formatAlbumsDto != "ico" && formatAlbumsDto != "jpeg" && formatAlbumsDto != "jpg" && formatAlbumsDto != "gif" && formatAlbumsDto != "tiff") {

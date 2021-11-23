@@ -1,0 +1,2 @@
+INSERT INTO Photos (PhotoID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy) VALUES (1, "PGN", "RSA", "TAGS", now, now);
+INSERT INTO Albums (AlbumsID, FileFormat, Geolocation, Tags, CapturedDate, CapturedBy) VALUES (2, "PGN","RSA", "NAME",now, now);
